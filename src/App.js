@@ -41,6 +41,8 @@ const App = () => {
 
   useEffect(() => {
     window.Telegram.WebApp.ready();
+    window.Telegram.WebApp.MainButton.text = "Launch";
+    window.Telegram.WebApp.MainButton.show();
   }, []);
 
   return (
