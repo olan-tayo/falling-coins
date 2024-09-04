@@ -9,7 +9,6 @@ const App = () => {
   const [coins, setCoins] = useState([]);
   const [clicks, setClicks] = useState(0);
   const [accumulatedCoins, setAccumulatedCoins] = useState([]);
-  const telegram = window.Telegram.WebApp;
 
   const handleDropCoin = useCallback(() => {
     if (clicks + 1 <= maxCoins && accumulatedCoins.length < maxCoins) {
@@ -41,10 +40,8 @@ const App = () => {
   }, [clicks, accumulatedCoins, maxCoins]);
 
   useEffect(() => {
-    if (window.Telegram && telegram) {
-      telegram.ready();
-    }
-  }, [telegram]);
+    window.Telegram.WebApp.ready();
+  }, []);
 
   return (
     <div className="App relative h-screen">
