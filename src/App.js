@@ -44,7 +44,7 @@ const App = () => {
     if (window.Telegram && telegram) {
       telegram.ready();
     }
-  }, []);
+  }, [telegram]);
 
   return (
     <div className="App relative h-screen">
