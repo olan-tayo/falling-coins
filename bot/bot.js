@@ -5,7 +5,7 @@ bot.command("start", (ctx) => {
   ctx.reply(
     "Welcome! Click the button below:",
     Markup.inlineKeyboard([
-      Markup.button.url("Visit Example", "https://www.example.com"),
+      Markup.button.url("Launch", "https://falling-coins.vercel.app/"),
     ])
   );
 });
