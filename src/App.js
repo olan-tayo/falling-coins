@@ -9,6 +9,7 @@ const App = () => {
   const [coins, setCoins] = useState([]);
   const [clicks, setClicks] = useState(0);
   const [accumulatedCoins, setAccumulatedCoins] = useState([]);
+  const telegram = window.Telegram.WebApp;
 
   const handleDropCoin = useCallback(() => {
     if (clicks + 1 <= maxCoins && accumulatedCoins.length < maxCoins) {
@@ -40,7 +41,9 @@ const App = () => {
   }, [clicks, accumulatedCoins, maxCoins]);
 
   useEffect(() => {
-    console.log(window.Telegram.WebApp);
+    if (window.Telegram && telegram) {
+      telegram.ready();
+    }
   }, []);
 
   return (
