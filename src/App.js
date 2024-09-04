@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import "./App.css";
 import coin_img from "./assets/dollar.png";
 import disabled_coin from "./assets/disabled_coin.png";
@@ -38,6 +38,10 @@ const App = () => {
       }, 9000);
     }
   }, [clicks, accumulatedCoins, maxCoins]);
+
+  useEffect(() => {
+    console.log(window.Telegram.WebApp);
+  }, []);
 
   return (
     <div className="App relative h-screen">
