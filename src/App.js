@@ -40,7 +40,7 @@ const App = () => {
   }, [clicks, accumulatedCoins, maxCoins]);
 
   return (
-    <div className="App relative">
+    <div className="App relative h-screen">
       <div onClick={handleDropCoin} className="pt-8 pb-4 flex  justify-center">
         {clicks < maxCoins && accumulatedCoins.length < maxCoins ? (
           <div className="cursor-pointer">
