@@ -1,14 +1,9 @@
 const { Telegraf } = require("telegraf");
-const bot = new Telegraf("YOUR_BOT_TOKEN");
+const { message } = require("telegraf/filters");
 
-bot.start((ctx) => {
-  ctx.reply(
-    "Welcome to your Telegram bot! Use /help to see available commands."
-  );
-});
-
+const bot = new Telegraf("7538734070:AAHyqf1ejhzLwvIZe7QcLdRDRK4mNLoNuRg");
+bot.start((ctx) => ctx.reply("Welcome"));
+// bot.help((ctx) => ctx.reply("Send me a sticker"));
+bot.on(message("sticker"), (ctx) => ctx.reply("👍"));
+// bot.hears("hi", (ctx) => ctx.reply("Hey there"));
 bot.launch();
-
-// Markup.inlineKeyboard([
-//       Markup.button.url("Launch", "https://falling-coins.vercel.app/"),
-//     ])
