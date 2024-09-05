@@ -9,6 +9,7 @@ const App = () => {
   const [coins, setCoins] = useState([]);
   const [clicks, setClicks] = useState(0);
   const [accumulatedCoins, setAccumulatedCoins] = useState([]);
+  const [aggregatedCoins, setAggregatedCoins] = useState([]);
 
   const handleDropCoin = useCallback(() => {
     if (clicks + 1 <= maxCoins && accumulatedCoins.length < maxCoins) {
@@ -27,6 +28,7 @@ const App = () => {
         );
         // DISPLAY COINS ON THE SCREEN PREVIOUS ANIMATION HAS ENDED
         setAccumulatedCoins((prevCoins) => [...prevCoins, newCoin]);
+        setAggregatedCoins((prevCoins) => [...prevCoins, newCoin]);
       }, 2000);
 
       // REMOVE COINS FROM SCREEN AFTER 9 SECONDS
@@ -45,6 +47,14 @@ const App = () => {
 
   return (
     <div className="App relative h-screen">
+      <div className="flex justify-end pr-3 text-xl pt-3 font-medium">
+        <p>
+          Coins:{" "}
+          <span className="font-semibold text-[#f3c70d]">
+            {aggregatedCoins.length}
+          </span>
+        </p>
+      </div>
       <div onClick={handleDropCoin} className="pt-8 pb-4 flex  justify-center">
         {clicks < maxCoins && accumulatedCoins.length < maxCoins ? (
           <div className="cursor-pointer">
