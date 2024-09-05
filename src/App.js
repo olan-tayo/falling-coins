@@ -5,7 +5,7 @@ import disabled_coin from "./assets/disabled_coin.png";
 import flat_coin from "./assets/flat_icon.png";
 
 const App = () => {
-  const maxCoins = 10;
+  const maxCoins = 20;
   const [coins, setCoins] = useState([]);
   const [clicks, setClicks] = useState(0);
   const [accumulatedCoins, setAccumulatedCoins] = useState([]);
