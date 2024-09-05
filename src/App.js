@@ -49,7 +49,7 @@ const App = () => {
     <div className="App relative h-screen">
       <div className="flex justify-end pr-3 text-xl pt-3 font-medium">
         <p>
-          Coins:{" "}
+          Total Coins:{" "}
           <span className="font-semibold text-[#f3c70d]">
             {aggregatedCoins.length}
           </span>
