@@ -66,7 +66,7 @@ const App = () => {
         </div>
       ))}
 
-      <div className="absolute bottom-10">
+      <div className="absolute bottom-14">
         <div className="flex flex-row-reverse flex-wrap items-center gap-3 px-2">
           {accumulatedCoins.map((coins, index) => {
             return (
